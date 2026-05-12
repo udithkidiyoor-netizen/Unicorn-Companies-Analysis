@@ -66,7 +66,14 @@ Performed analysis on:
 - Quarterly valuation trends
 - Time taken to achieve unicorn status
 
-## 4. Data Visualization
+## 4 Findings
+- There are 1074 unicorn companies represented in this dataset.
+- 2015 is the year when the most number of unicorn companies were founded.
+- Many of the unicorn companies that were founded in 2021 were founded in the United States and belong to "Fintech", "E-commerce & direct-to-consumer", and "Internet software & services" industries.
+-The box plot created shows that companies that become unicorns in the months of September and October have a smaller median value for how long it took to become unicorns.
+- One of the bar plots created shows that the average valuation of companies that joined in 2020 is highest in the third quarter of the year, whereas the average valuation of companies that joined in 2021 is highest in the first quarter of the year.
+
+## 5. Data Visualization
 
 Created visualizations using:
 
