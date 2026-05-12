@@ -79,11 +79,10 @@ Created visualizations using:
 
 # Key Insights
 
-- Unicorn company growth increased significantly in recent years.
-- Companies founded after 2010 generally reached unicorn status faster.
-- Valuation trends varied across different quarters and years.
-- Certain months showed higher unicorn company activity.
-- Outliers exist in the time taken to achieve unicorn status.
+- According to data analysis that was conducted on a dataset of 1074 unicorn companies, companies that joined in the months of September and October tended to take less time to become unicorns.
+- Another finding was that many of the unicorn companies that were founded in 2021 were founded in the United States and belong to "Fintech", "E-commerce & direct-to-consumer", and "Internet software & services" industries. So if the stakeholders want to invest in companies founded in 2021, it would be a good idea to consider companies that belong to these industries, as they may be strong candidates for becoming unicorns.
+- It was also discovered that the average valuation of companies that joined in 2021 is highest in the first quarter of the year, and the average valuation of companies that joined in 2020 is the third quarter of the year. When considering companies that newly join in the future, it would be worth closely looking at companies that join in the first and third quarters of the year.
+- The data can be analyzed further to gather more insights that are specific to the interests of the investing firm and the stakeholders.
 
 ---
 
