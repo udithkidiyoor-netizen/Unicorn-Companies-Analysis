@@ -1,0 +1,135 @@
+---
+title: "unicorn project"
+format: html
+---
+
+```{python}
+import pandas as pd
+data=pd.read_csv("C:/Users/Udith P Kidiyoor/Downloads/Unicorn_Companies (2).csv")
+data.head(20)
+```
+```{python}
+data.info()
+```
+```{python}
+data.isna().sum()
+```
+```{python}
+data.describe()
+```
+```{python}
+data["Date Joined"]=pd.to_datetime(data["Date Joined"])
+```
+```{python}
+data.shape
+```
+```{python}
+data["Year Joined"]=data["Date Joined"].dt.year
+data.head(10)
+```
+```{python}
+data["Valuation"]=data["Valuation"].str.replace("$","")
+data.head(10)
+```
+```{python}
+data["Valuation"]=data["Valuation"].str.replace("B","")
+data.head(10)
+```
+```{python}
+data["Valuation"]=data["Valuation"].astype(float)
+```
+```{python}
+data.duplicated().sum()
+```
+```{python}
+data.isna().sum()
+```
+```{python}
+mask=data.isna()
+mask.head(10)
+```
+```{python}
+mask=mask.any(axis=1)
+mask.head(10)
+```
+```{python}
+mask.shape
+```
+```{python}
+missing_rows=data[mask]
+```
+```{python}
+total_count=data.shape[0] * data.shape[1]
+total_count
+# 11814
+```
+```{python}
+dropna_rows=data.dropna()
+```
+```{python}
+count_dropna_rows=dropna_rows.shape[0] * dropna_rows.shape[1]
+count_dropna_rows
+```
+```{python}
+dropna_columns=data.dropna(axis=1)
+count_dropna_columns=dropna_columns.shape[0] * dropna_columns.shape[1]
+count_dropna_columns
+```
+```{python}
+(total_count-count_dropna_rows)/total_count *100
+# 1.5828677839851024
+```
+```{python}
+(total_count - count_dropna_columns)/ total_count *100
+# 18.181818181818183
+```
+### Insights Dropping rows removed only 1.58% of the data, while dropping columns removed 18.18% of the data. Therefore, dropping rows is a better option because it retains more information from the dataset.
+
+```{python}
+data=data.fillna(method="backfill")
+```
+```{python}
+data[mask]
+```
+```{python}
+data.isna().sum()
+```
+```{python}
+# 1. Create a Boolean mask using conditional logic
+
+mask = (
+    (
+        (data['Industry'] == 'Hardware') &
+        (
+            data['City'].isin(
+                ['Beijing', 'San Francisco', 'London']
+            )
+        )
+    )
+    |
+    (
+        (data['Industry'] == 'Artificial intelligence') &
+        (data['City'] == 'London')
+    )
+)
+
+# 2. Apply the mask to the `df_companies` dataframe and assign the results to `df_invest`
+
+df_invest = data[mask]
+
+df_invest
+```
+```{python}
+df_invest.describe()
+```
+```{python}
+# Group the data by Country/Region
+national_valuations = (
+    data.groupby('Country/Region')['Valuation']
+    .sum()
+    .sort_values(ascending=False)
+)
+
+# Print the top 15 values
+national_valuations.head(15)
+```
